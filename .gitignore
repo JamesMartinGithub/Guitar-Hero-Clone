@@ -72,3 +72,4 @@ crashlytics-build.properties
 /[Aa]ssets/[Ss]treamingAssets/aa/*
 
 /Assets/Audio/*.ogg
+/Assets/Audio/*.ogg.meta
