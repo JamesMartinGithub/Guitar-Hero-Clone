@@ -79,7 +79,7 @@ public static class ChartParser
     }
 
     public static Song ParseChart(Song song, string folder, int difficulty) {
-        //folder = "C:\\Users\\Fierce\\Downloads\\Laszlo - Supernova(Wagsii)\\Laszlo - Supernova(Wagsii)";
+        song.events.Clear();
         StreamReader sr = new StreamReader(folder + "\\notes.chart");
         String line;
         line = sr.ReadLine();
