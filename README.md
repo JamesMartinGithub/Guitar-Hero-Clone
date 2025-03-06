@@ -32,7 +32,10 @@ offset can be changed in the chart file to sync the audio (-/+)
 - Option for audible miss notes
 
 ## Gallery:
-
+<img src="https://github.com/user-attachments/assets/ba565200-d6ac-4684-ba31-2c07680e7d63" width="311" height="174" style="display:none">
+<img src="https://github.com/user-attachments/assets/9ae43592-3073-4c4f-870e-c3527d849b92" width="311" height="174" style="display:none">
+<img src="https://github.com/user-attachments/assets/a97393f5-3cb3-4337-b5d2-1504d8343a96" width="311" height="174" style="display:none">
+<img src="https://github.com/user-attachments/assets/4f8a636f-0f6c-4da5-9355-18db2c5f00b0" width="311" height="174" style="display:none">
 
 ## Acknowledgements:
 The following assets were used in this project and were not created by myself:
