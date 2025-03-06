@@ -8,7 +8,7 @@ public class ScoreController : MonoBehaviour
     public Controller controller;
     private Dictionary<string, int> highscores = new Dictionary<string, int>();
 #if UNITY_EDITOR
-    private string scoreFilePath = "C:\\Users\\Fierce\\Desktop\\Songs\\Highscores.txt";
+    private string scoreFilePath = System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\Desktop\\Songs\\Highscores.txt";
     
 #else
     private string scoreFilePath = AppDomain.CurrentDomain.BaseDirectory + "\\Highscores.txt";
@@ -25,6 +25,7 @@ public class ScoreController : MonoBehaviour
                 line = reader.ReadLine();
             }
             reader.Close();
+            controller.ShowInitialScores();
         } else {
             FileStream newFile = File.Create(scoreFilePath);
             newFile.Close();
@@ -34,11 +35,22 @@ public class ScoreController : MonoBehaviour
     public void UpdateScore(int newScore) {
         string song = controller.GetCurrentSongFolder();
         if (highscores.ContainsKey(song)) {
+            // Song has highscore
             if (highscores[song] < newScore) {
+                // New highscore is greater
                 highscores[song] = newScore;
+                // Update score in file
+                string[] allLines = File.ReadAllLines(scoreFilePath);
+                for (int i = 0; i < allLines.Length; i++) {
+                    string[] data = allLines[i].Split('*');
+                    if (data[0] == song) {
+                        allLines[i] = song + "*" + newScore.ToString();
+                    }
+                }
+                File.WriteAllLines(scoreFilePath, allLines);
             }
         } else {
-            print("Highscores doesn't contain song: " + song);
+            // Song has no highscore
             highscores[song] = newScore;
             // Save score to scoreFile
             StreamWriter writer = new StreamWriter(scoreFilePath, true);

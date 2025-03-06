@@ -202,4 +202,8 @@ public class Controller : MonoBehaviour
     public string GetCurrentSongFolder() {
         return currentSong.Item1;
     }
+
+    public void ShowInitialScores() {
+        songSelection.UpdateScoreTexts();
+    }
 }

@@ -162,6 +162,7 @@ public class NoteStrummer : MonoBehaviour
             Destroy(lines[i].obj);
             lines.RemoveAt(i);
         }
+        starPower = false;
     }
 
     public void AddNote(Note note) {

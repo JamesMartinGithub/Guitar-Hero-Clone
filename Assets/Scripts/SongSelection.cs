@@ -53,7 +53,7 @@ public class SongSelection : MonoBehaviour
     private void LoadSongs() {
         string folder;
 #if UNITY_EDITOR
-        folder = "C:\\Users\\Fierce\\Desktop\\Songs";
+        folder = System.Environment.GetEnvironmentVariable("USERPROFILE") + "\\Desktop\\Songs";
 #else
         folder = AppDomain.CurrentDomain.BaseDirectory + "\\Songs";
 #endif
